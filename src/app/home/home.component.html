@@ -1,0 +1,25 @@
+<nav class="navbar bg-light mt-2">
+    <form class="container-fluid">
+        <div class="input-group">
+            <input [ngModel]="pokemonName" name="pokemonName" (ngModelChange)="onSearchChange($event)" type="text" class="form-control" placeholder="nome do pokemon" aria-label="Username" aria-describedby="basic-addon1">
+            <button class="btn btn-success" type="submit">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+    </form>
+</nav>
+
+<div class="row justify-content-center">
+    <div *ngFor="let poke of pokemon" [routerLink]="['/detalhes',poke.pokeIndex]" class="card col-4 mt-2 mx-2" style="width: 18rem; background:#F2F2F2;">
+        <img [src]="poke.image" class="card-img-top" alt="{{poke.name}}" style="background: #F2F2F2;">
+        <div class="card-body">
+            <h5 class="card-title"> #{{ poke.pokeIndex }} {{poke.name }}</h5>
+        </div>
+    </div>
+</div>
+
+<div class="search-result"
+infiniteScroll
+[infiniteScrollDistance] = "1"
+[infiniteScrollThrottle] = "50"
+(scrolled)="loadPokemon(true)"></div>

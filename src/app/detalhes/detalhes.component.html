@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div *ngIf="pokemon?.id" class="card mt-2 col-9 p-0">
+        <div class="card-header bg-danger text-light">
+
+            <h2>#{{pokemon.id}} {{pokemon.name}} </h2>
+        </div>
+
+        <div style = "width: 18rem; margin: auto;">
+        
+        
+            <swiper [slidesPerView] = "1"
+                    [spaceBetween] = "30"
+                    [pagination]="{
+                        clickable: true
+                    }"
+                    [loop] = "true"
+                    [scrollbar] = "{draggable: true}"
+                    class="mySwiper">
+
+                    <ng-template *ngFor = "let img of pokemon.images" swiperSlide>
+                        <img [src] = "img" class="card-img-top">
+                    </ng-template>
+        </swiper>  
+    </div>
+
+    <div class="card-body">
+        <h5 class="card-title">Information</h5>
+
+            <ul class = "list-group list-group-flush">
+                <li class="list-group-item list-group-item-secondary my-1">
+                    <strong>Types:</strong>
+                    <span class="badge bg-warming mx-1" *ngFor = "let item of pokemon.types">
+
+                        {{item.type.name}}
+                    </span>
+
+                </li>
+                <li class="list-group-item list-group-item-secondary my-1">
+                    <strong>Weight</strong> <span class="badge bg-warning mx-1">
+                        {{pokemon.weight}}
+                    </span> lbs
+                    </li>
+
+            </ul>
+
+            <h5>Abilities</h5>
+<div> 
+    <span class="badge bg-danger mx-1" *ngFor="let skill of pokemon.abilities">
+        {{skill.ability.name}}
+    </span>
+
+
+</div>
+    <h5>Statistics</h5>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item list-group-item-secondary my-1" *ngFor="let data of pokemon.stats">
+
+            <span> <strong> {{data.stat.name}}: </strong></span>
+               
+            <span style="position: absolute; right: 5px;">
+            <b>{{data.base_stat}}</b>
+            </span>
+        </li>
+    </ul>
+
+    <div class="d-grid gap-2 my-2">
+        <button [routerLink]="['/home']" class="btn btn-danger" type="button">Back</button>
+
+    </div>
+
+</div>
