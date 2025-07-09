@@ -1,27 +1,49 @@
-# AngularPokemonScss
+# Pokédex 🧬
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.4.
+Uma Pokédex simples desenvolvida em Angular como atividade de sala de aula. Permite consultar informações de Pokémon utilizando a [PokéAPI](https://pokeapi.co/).
 
-## Development server
+## 🔧 Tecnologias
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Angular 14
+- TypeScript
+- SCSS
+- HTML5
 
-## Code scaffolding
+## 🚀 Como executar
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/Pegasis12/Pokedex.git
+   cd Pokedex
+   ```
 
-## Build
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+3. Rode o servidor de desenvolvimento:
+   ```bash
+   ng serve
+   ```
 
-## Running unit tests
+   Acesse no navegador: `http://localhost:4200`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 📁 Estrutura básica
 
-## Running end-to-end tests
+O projeto segue a estrutura padrão do Angular CLI e pode conter:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Componentes para exibição de Pokémon
+- Consumo da PokéAPI
+- Navegação e estilização com SCSS
 
-## Further help
+## 🧪 Testes
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para rodar os testes:
+```bash
+ng test
+```
+
+## 📄 Licença
+
+Este projeto é apenas para fins educacionais.
